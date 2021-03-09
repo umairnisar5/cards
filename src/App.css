@@ -2,37 +2,83 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardscss {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  flex-flow: wrap;
+  margin: 50px;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.nav_tag {
+  background: rgb(106 209 248);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu_icon {
+  color: #fff;
+  left: 10px;
+  margin-left: 5px;
+}
+
+.input_tag {
+  color: #fff;
+  background: rgb(106, 106, 248);
+  padding: 5px;
+  outline: none;
+  outline-style: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: large;
+  background: repeating-linear-gradient(45deg, black, transparent 100px);
+}
+
+::placeholder {
   color: white;
+  opacity: 1;
+  /* Firefox */
 }
 
-.App-link {
-  color: #61dafb;
+.delete_icon :hover {
+  color: red;
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 1s;
+}
+.mail_icon {
+  color: #fff;
+  margin-right: 5px;
+}
+.mail_icon:hover {
+  cursor: pointer;
+  color: lightskyblue;
+  transform: scale(1.2);
+  transition: 1s;
+}
+#ADD {
+  margin: 0px 90px;
+  border-radius: 1px solid black;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  width: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+#ADD:hover{
+  background-color: #008CBA;
+  color: white;
+  transform: scale(1.1);
+  transition: 2s;
+}
+@media screen and (max-width: 1200px) {
+  .cardscss {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    flex-flow: wrap;
   }
 }
