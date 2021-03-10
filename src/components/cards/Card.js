@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import DeleteIcon from "@material-ui/icons/Delete";
-
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -13,6 +12,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 import MailIcon from "@material-ui/icons/Mail";
 import Data from "./Data.json";
 import Badge from "@material-ui/core/Badge";
+import history from "../../history";
+import store from "../../store/store";
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles({
   root: {
@@ -26,19 +28,24 @@ const useStyles = makeStyles({
  
 });
 
-export default function MediaCard() {
+function MediaCard(props) {
   const classes = useStyles();
   const [searchTerm, setSearchTerm] = useState("");
   // const dispatch = useDispatch();
 
-  const [newData, setNewData] = useState(0);
+  let Addme = (value) => {
+    store.dispatch({
+      type: "ADD_ITEM",
+      value: value
+    })
 
-  const Addme = () => {
-    setNewData(newData + 1);
   };
 
-  const clear = () => {
-    setNewData(0);
+  let clear = () => {
+    // setNewData(0);
+    store.dispatch({
+      type: "CLEAR_CART"
+    })
   };
 
   return (
@@ -59,13 +66,13 @@ export default function MediaCard() {
         />
 
         <Badge
-          badgeContent={newData}
+          badgeContent={props.cartValue}
           className="addCartNumbers"
           color="secondary"
         >
           <DeleteIcon  className="delete_icon" color="white" onClick={clear} />
 
-          <MailIcon className="mail_icon" />
+          <MailIcon onClick={()=>{history.push("/cart")}} className="mail_icon" />
         </Badge>
       </nav>
       <div className="cardscss">
@@ -105,7 +112,7 @@ export default function MediaCard() {
               </CardActionArea>
               <CardActions>
                 <Button className="Add_item" id="ADD"
-                 onClick={Addme} size="small" color="primary">
+                 onClick={()=>Addme(val)} size="small" color="primary">
                   Add To Cart
                 </Button>
               </CardActions>
@@ -116,3 +123,11 @@ export default function MediaCard() {
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    cartValue: state.cartValue
+  }
+}
+
+export default connect(mapStateToProps)(MediaCard)
