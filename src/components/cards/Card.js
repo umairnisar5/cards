@@ -29,6 +29,7 @@ const useStyles = makeStyles({
 export default function MediaCard() {
   const classes = useStyles();
   const [searchTerm, setSearchTerm] = useState("");
+  // const dispatch = useDispatch();
 
   const [newData, setNewData] = useState(0);
 
@@ -82,8 +83,8 @@ export default function MediaCard() {
           }
         }).map((val, key) => {
           return (
-            <Card className={classes.root}>
-              <CardActionArea>
+            <Card  className={classes.root}>
+              <CardActionArea >
                 <CardMedia
                   className={classes.media}
                   image={val.imgsrc}
