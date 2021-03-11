@@ -35,6 +35,25 @@
         "name":"Full Sleave ",
         "imgsrc":"https://i.pinimg.com/564x/80/b2/43/80b24359b3c260911ebfd6a7ecbacf9f.jpg",
         "desc": "Rather than calling your shirt “nice”, use power words that suit your tone like dazzling, spectacular,"
+    },
+    {
+        "id": "7",
+        "name":"Stylish Hooks ",
+        "imgsrc":"https://i.pinimg.com/236x/80/3c/ef/803cef7fdfc1da10818373042aed5a65.jpg",
+        "desc": "Use power words that suit your tone like dazzling, spectacular,"
+    },
+    {
+        "id": "8",
+        "name":"Jacket  ",
+        "imgsrc":"https://i.pinimg.com/236x/96/b9/fd/96b9fd057d667c481ed5fe20ac2c799c.jpg",
+        "desc": "Use power words that suit your tone like dazzling, spectacular,"
+    },
+    {
+        "id": "9",
+        "name":"Golf Shirts ",
+        "imgsrc":"https://i.pinimg.com/236x/5d/aa/70/5daa70fa26ed7c2e7edae033e79665d8.jpg",
+        "desc": "Use power words that suit your tone like dazzling, spectacular,"
     }
+    
 
 ]

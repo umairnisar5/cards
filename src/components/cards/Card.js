@@ -68,7 +68,7 @@ function MediaCard(props) {
           className="addCartNumbers"
           color="secondary"
         >
-          <DeleteIcon  className="delete_icon" color="white" onClick={clear} />
+          {/* <DeleteIcon  className="delete_icon" color="white" onClick={clear} /> */}
 
           <LocalGroceryStoreIcon onClick={()=>{history.push("/cart")}} className="LocalGroceryStoreIcon" />
         </Badge>
