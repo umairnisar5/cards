@@ -8,9 +8,11 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
 import MenuIcon from "@material-ui/icons/Menu";
 import MailIcon from "@material-ui/icons/Mail";
 import Data from "./Data.json";
+import LocalMallIcon from '@material-ui/icons/LocalMall';
 import Badge from "@material-ui/core/Badge";
 import history from "../../history";
 import store from "../../store/store";
@@ -51,10 +53,11 @@ function MediaCard(props) {
   return (
     <div className="main_div">
       <nav className="nav_tag">
-        <img
+      <LocalMallIcon id="mall_icon" />
+        {/* <img
           src="https://i.pinimg.com/564x/08/bd/69/08bd692665c8ddd52337528a8f88a919.jpg"
           width="45px"
-        />
+        /> */}
         {/* <MenuIcon className="menu_icon" /> */}
         <input
           type="text"
@@ -72,7 +75,7 @@ function MediaCard(props) {
         >
           <DeleteIcon  className="delete_icon" color="white" onClick={clear} />
 
-          <MailIcon onClick={()=>{history.push("/cart")}} className="mail_icon" />
+          <LocalGroceryStoreIcon onClick={()=>{history.push("/cart")}} className="LocalGroceryStoreIcon" />
         </Badge>
       </nav>
       <div className="cardscss">

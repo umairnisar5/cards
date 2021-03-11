@@ -14,6 +14,9 @@ import Badge from "@material-ui/core/Badge";
 import { connect } from 'react-redux';
 import data from "../cards/Data.json";
 
+
+
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 350,
@@ -29,7 +32,10 @@ const useStyles = makeStyles({
 function Cart(props) {
   const classes = useStyles();
   return (
+
     <div>
+    <h1 className="item">Card Items</h1>
+    <div className="cardscss">
     {props.cartList.map((val, key) => {
         return (<Card  className={classes.root}>
               <CardActionArea >
@@ -54,6 +60,7 @@ function Cart(props) {
             </Card>)
     })
     }
+    </div>
     </div>
   );
 }
