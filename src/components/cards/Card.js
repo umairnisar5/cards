@@ -54,11 +54,6 @@ function MediaCard(props) {
     <div className="main_div">
       <nav className="nav_tag">
       <LocalMallIcon id="mall_icon" />
-        {/* <img
-          src="https://i.pinimg.com/564x/08/bd/69/08bd692665c8ddd52337528a8f88a919.jpg"
-          width="45px"
-        /> */}
-        {/* <MenuIcon className="menu_icon" /> */}
         <input
           type="text"
           className="input_tag"

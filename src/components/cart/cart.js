@@ -6,16 +6,13 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
+import HomeIcon from '@material-ui/icons/Home';
+import history from "../../history"
+import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
+import LocalMallIcon from '@material-ui/icons/LocalMall';
 import Typography from "@material-ui/core/Typography";
-import MenuIcon from "@material-ui/icons/Menu";
-import MailIcon from "@material-ui/icons/Mail";
-import Badge from "@material-ui/core/Badge";
 import { connect } from 'react-redux';
-import data from "../cards/Data.json";
-
-
-
+import store from "../../store/store";
 
 const useStyles = makeStyles({
   root: {
@@ -29,12 +26,32 @@ const useStyles = makeStyles({
  
 });
 
+let clear = () => {
+  store.dispatch({
+    type: "CLEAR_CART"
+  })
+};
+
 function Cart(props) {
   const classes = useStyles();
+  const [searchTerm, setSearchTerm] = useState("");
   return (
-
     <div>
-    <h1 className="item">Card Items</h1>
+     <nav className="nav_tag">
+      <HomeIcon onClick={() => {
+        history.push("/")
+      }} id="mall_icon" />
+        <input
+          type="text"
+          className="input_tag"
+          placeholder="search...."
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }}
+        />    
+          <DeleteIcon  className="delete_icon" color="white" onClick={clear} />
+      </nav>
+    <h1 className="item">Cart Item</h1>
     <div className="cardscss">
     {props.cartList.map((val, key) => {
         return (<Card  className={classes.root}>

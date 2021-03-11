@@ -1,3 +1,8 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
@@ -13,11 +18,10 @@
   justify-content: center;
 }
 .item {
-  background-color: lightskyblue;
   font-family: "Akaya Telivigala", cursive;
   text-shadow: 2px 2px 5px rgba(0, 238, 255, 0.884);
   text-align: center;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .nav_tag {
@@ -26,6 +30,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 50px;
+
 }
 
 .menu_icon {
@@ -71,7 +77,8 @@
 #mall_icon {
   color: rgb(11, 121, 136);
   margin-right: 10px;
-  width: 40px;
+  width: 50px;
+  height: 30px;
 }
 
 #mall_icon:hover{
