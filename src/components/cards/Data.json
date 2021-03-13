@@ -1,14 +1,16 @@
    [
     {
         "id": "1",
-        "imgsrc":"https://i.pinimg.com/564x/0c/de/49/0cde49863d8402ddd5f138cb8c31f073.jpg",
- "name":" Check  shirt",
- "desc": "A polo shirt is a form of shirt with a collar, a placket neckline with two or three buttons,",
- "quantity": 0
+        "imgsrc":"https://i.pinimg.com/564x/ee/3c/38/ee3c3855af2cada697aa5258551fa34a.jpg",
+        "name":" Check  shirt",
+        "price": "28",
+        "desc": "A polo shirt is a form of shirt with a collar, a placket neckline with two or three buttons,",
+        "quantity": 0
     },
     {
         "id": "2",
         "name":"Black Cotton",
+        "price": "30",
         "imgsrc":"https://rukminim1.flixcart.com/image/714/857/shirt/c/j/e/bfshtpc501blak-being-fab-44-original-imae7darhnqbz4rq.jpeg?q=50",
         "desc": "The latest designs and styles in men’s black shirt fashion are here",
         "quantity": 0
@@ -17,6 +19,7 @@
     {
         "id": "3",
         "name":"Cotton gray",
+        "price": "18",
         "imgsrc":"https://i.pinimg.com/236x/3a/b5/98/3ab5986b0bfd3073c785d0fa14144d5b.jpg",
         "desc": "Polo shirts are usually made of knitted cotton (rather than woven cloth)",
         "quantity": 0
@@ -24,6 +27,7 @@
     {
         "id": "4",
         "name":"Polo  blue",
+        "price": "17",
         "imgsrc":"https://i.pinimg.com/236x/74/d6/90/74d6907a97ccf2b2a42c976887b70ffd.jpg",
         "desc": "In 1920, Lewis Lacey, a Canadian (born of English parents in Montreal, Quebec in 1887)",
         "quantity": 0
@@ -31,6 +35,7 @@
     {
         "id": "5",
         "name":"T Shirt",
+        "price": "12",
         "imgsrc":"https://i.pinimg.com/564x/0c/9d/0e/0c9d0e6c6331f11f716740d2c88c4ffd.jpg",
         "desc": "A shirt is a cloth garment for the upper body (from the neck to the waist). ... In British English",
         "quantity": 0
@@ -38,6 +43,7 @@
     {
         "id": "6",
         "name":"Full Sleave ",
+        "price": "10",
         "imgsrc":"https://i.pinimg.com/564x/80/b2/43/80b24359b3c260911ebfd6a7ecbacf9f.jpg",
         "quantity": 0,
         "desc": "Rather than calling your shirt “nice”, use power words that suit your tone like dazzling, spectacular,"
@@ -45,6 +51,7 @@
     {
         "id": "7",
         "name":"Stylish Hooks ",
+        "price": "20",
         "imgsrc":"https://i.pinimg.com/236x/80/3c/ef/803cef7fdfc1da10818373042aed5a65.jpg",
         "desc": "Use power words that suit your tone like dazzling, spectacular,",
         "quantity": 0
@@ -52,6 +59,7 @@
     {
         "id": "8",
         "name":"Jacket  ",
+        "price": "28",
         "imgsrc":"https://i.pinimg.com/236x/96/b9/fd/96b9fd057d667c481ed5fe20ac2c799c.jpg",
         "desc": "Use power words that suit your tone like dazzling, spectacular,",
         "quantity": 0
@@ -59,6 +67,7 @@
     {
         "id": "9",
         "name":"Golf Shirts ",
+        "price": "10",
         "imgsrc":"https://i.pinimg.com/236x/5d/aa/70/5daa70fa26ed7c2e7edae033e79665d8.jpg",
         "desc": "Use power words that suit your tone like dazzling, spectacular,",
         "quantity": 0
@@ -66,6 +75,7 @@
     {
         "id": "10",
         "name":"Zipper Shirt ",
+        "price": "20",
         "imgsrc":"https://i.pinimg.com/564x/ef/e4/7f/efe47fb32a84847fe5a35416ebdaf0a6.jpg",
         "desc": "The biggest innovation in shirting since the sleeve ;-), the Zip Fit reinvents the slim fit button down shir",
         "quantity": 0
@@ -73,10 +83,17 @@
     {
         "id": "11",
         "name":"Jeans Cotton ",
+        "price": "30",
         "imgsrc":"https://i.pinimg.com/564x/0b/aa/24/0baa245985670aadef69abc3e4d61bf4.jpg",
         "desc": "Denim is a sturdy cotton warp-faced textile in which the weft passes under two or more warp threads",
         "quantity": 0
+    },
+    {
+        "id": "12",
+        "name":"Red Stylesh ",
+        "price": "25",
+        "imgsrc":"https://i.pinimg.com/564x/ac/91/c7/ac91c707c9485223b5bfa17ed3a1d3b8.jpg",
+        "desc": "Red is grace full color cotton warp-faced textile in which the weft passes under two or more warp threads",
+        "quantity": 0
     }
-    
-
 ]

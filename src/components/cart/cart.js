@@ -115,16 +115,6 @@ function Cart(props) {
                 <Typography gutterBottom variant="h5" component="h2">
                   {val.quantity}
                 </Typography>
-                {/* <Button
-                  className="Add_item"
-                  id="add_cart_btn"
-                  size="small"
-                  color="primary"
-                  onClick={() => handleQuantity("-", val)}
-                >
-                  -
-                </Button> */}
-
                 <RemoveIcon
                   className="Add_item"
                   id="add_cart_btn"
@@ -132,7 +122,6 @@ function Cart(props) {
                   color="primary"
                   onClick={() => handleQuantity("-", val)}
                 />
-
                 <Button
                   className="Add_item"
                   id="add_cart_btn"
@@ -150,6 +139,14 @@ function Cart(props) {
             </Card>
           );
         })}
+      </div>
+      <div className="chcek_item">
+        <h1 className="summary">Summary </h1>
+        <h2>Total Items: 1</h2>
+        <h2>Total Price $2</h2>
+        <Button id="button_chck" variant="contained" color="primary">
+          Primary
+        </Button>
       </div>
     </div>
   );
