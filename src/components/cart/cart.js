@@ -11,6 +11,8 @@ import Button from "@material-ui/core/Button";
 import history from "../../history";
 import LocalGroceryStoreIcon from "@material-ui/icons/LocalGroceryStore";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 import Typography from "@material-ui/core/Typography";
 import { connect } from "react-redux";
 import store from "../../store/store";
@@ -93,7 +95,7 @@ function Cart(props) {
                 </CardContent>
                 </CardActionArea>
                 <CardActions>
-                <Button
+                {/* <Button
                   className="Add_item"
                   id="add_cart_btn"
                   size="small"
@@ -101,11 +103,16 @@ function Cart(props) {
                   onClick={() => handleQuantity("+", val)}
                 >
                   +
-                </Button>
-                <Typography gutterBottom variant="h5" component="h2">
+                </Button> */}
+                <AddIcon className="Add_item"
+                  id="add_cart_btn"
+                  size="small"
+                  color="primary"
+                  onClick={() => handleQuantity("+", val)} />  
+                   <Typography gutterBottom variant="h5" component="h2">
                   {val.quantity}
                 </Typography>
-                <Button
+                {/* <Button
                   className="Add_item"
                   id="add_cart_btn"
                   size="small"
@@ -113,7 +120,15 @@ function Cart(props) {
                   onClick={() => handleQuantity("-", val)}
                 >
                   -
-                </Button>
+                </Button> */}
+
+                <RemoveIcon 
+                  className="Add_item"
+                  id="add_cart_btn"
+                  size="small"
+                  color="primary"
+                  onClick={() => handleQuantity("-", val)}
+                /> 
                 <Button
                   className="Add_item"
                   id="add_cart_btn"
