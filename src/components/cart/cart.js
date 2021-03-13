@@ -6,12 +6,13 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import HomeIcon from '@material-ui/icons/Home';
-import history from "../../history"
-import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
-import LocalMallIcon from '@material-ui/icons/LocalMall';
+import HomeIcon from "@material-ui/icons/Home";
+import Button from "@material-ui/core/Button";
+import history from "../../history";
+import LocalGroceryStoreIcon from "@material-ui/icons/LocalGroceryStore";
+import LocalMallIcon from "@material-ui/icons/LocalMall";
 import Typography from "@material-ui/core/Typography";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import store from "../../store/store";
 
 const useStyles = makeStyles({
@@ -21,15 +22,28 @@ const useStyles = makeStyles({
   },
   media: {
     height: 350,
-
   },
- 
 });
 
-let clear = () => {
+let delItem = (value) => {
   store.dispatch({
-    type: "CLEAR_CART"
-  })
+    type: "DEL_ITEM",
+    value: value,
+  });
+};
+
+let handleQuantity = (type, value) => {
+  if (type === "+") {
+    store.dispatch({
+      type: "ADD_QUANTITY",
+      value: value,
+    });
+  } else if (type === "-") {
+    store.dispatch({
+      type: "SUBTRACT_QUANTITY",
+      value: value,
+    });
+  }
 };
 
 function Cart(props) {
@@ -37,10 +51,13 @@ function Cart(props) {
   const [searchTerm, setSearchTerm] = useState("");
   return (
     <div>
-     <nav className="nav_tag">
-      <HomeIcon onClick={() => {
-        history.push("/")
-      }} id="mall_icon" />
+      <nav className="nav_tag">
+        <HomeIcon
+          onClick={() => {
+            history.push("/");
+          }}
+          id="mall_icon"
+        />
         <input
           type="text"
           className="input_tag"
@@ -48,14 +65,15 @@ function Cart(props) {
           onChange={(event) => {
             setSearchTerm(event.target.value);
           }}
-        />    
-          <DeleteIcon  className="delete_icon" color="white" onClick={clear} />
+        />
+        <DeleteIcon className="delete_icon" color="white" onClick={delItem} />
       </nav>
-    <h1 className="item">Cart Item</h1>
-    <div className="cardscss">
-    {props.cartList.map((val, key) => {
-        return (<Card  className={classes.root}>
-              <CardActionArea >
+      <h1 className="item">Cart Item</h1>
+      <div className="cardscss">
+        {props.cartList.map((val, index) => {
+          return (
+            <Card className={classes.root}>
+              <CardActionArea>
                 <CardMedia
                   className={classes.media}
                   image={val.imgsrc}
@@ -73,19 +91,52 @@ function Cart(props) {
                     {val.desc}
                   </Typography>
                 </CardContent>
-              </CardActionArea>
-            </Card>)
-    })
-    }
-    </div>
+                </CardActionArea>
+                <CardActions>
+                <Button
+                  className="Add_item"
+                  id="add_cart_btn"
+                  size="small"
+                  color="primary"
+                  onClick={() => handleQuantity("+", val)}
+                >
+                  +
+                </Button>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {val.quantity}
+                </Typography>
+                <Button
+                  className="Add_item"
+                  id="add_cart_btn"
+                  size="small"
+                  color="primary"
+                  onClick={() => handleQuantity("-", val)}
+                >
+                  -
+                </Button>
+                <Button
+                  className="Add_item"
+                  id="add_cart_btn"
+                  size="small"
+                  color="primary"
+                  onClick={() => delItem(val)}
+                >
+                  Delete Item
+                </Button>
+                </CardActions>
+              
+            </Card>
+          );
+        })}
+      </div>
     </div>
   );
 }
 
 const mapStateToProps = (state) => {
-    return {
-        cartList: state.cartList
-    }
-}
+  return {
+    cartList: state.cartList,
+  };
+};
 
-export default connect(mapStateToProps)(Cart)
+export default connect(mapStateToProps)(Cart);

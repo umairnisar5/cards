@@ -50,6 +50,8 @@ function MediaCard(props) {
     })
   };
 
+  
+
   return (
     <div className="main_div">
       <nav className="nav_tag">
