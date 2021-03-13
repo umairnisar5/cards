@@ -11,8 +11,9 @@ import Button from "@material-ui/core/Button";
 import history from "../../history";
 import LocalGroceryStoreIcon from "@material-ui/icons/LocalGroceryStore";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
+import AddIcon from "@material-ui/icons/Add";
+
+import RemoveIcon from "@material-ui/icons/Remove";
 import Typography from "@material-ui/core/Typography";
 import { connect } from "react-redux";
 import store from "../../store/store";
@@ -93,8 +94,8 @@ function Cart(props) {
                     {val.desc}
                   </Typography>
                 </CardContent>
-                </CardActionArea>
-                <CardActions>
+              </CardActionArea>
+              <CardActions>
                 {/* <Button
                   className="Add_item"
                   id="add_cart_btn"
@@ -104,12 +105,14 @@ function Cart(props) {
                 >
                   +
                 </Button> */}
-                <AddIcon className="Add_item"
+                <AddIcon
+                  className="Add_item"
                   id="add_cart_btn"
                   size="small"
                   color="primary"
-                  onClick={() => handleQuantity("+", val)} />  
-                   <Typography gutterBottom variant="h5" component="h2">
+                  onClick={() => handleQuantity("+", val)}
+                />
+                <Typography gutterBottom variant="h5" component="h2">
                   {val.quantity}
                 </Typography>
                 {/* <Button
@@ -122,24 +125,28 @@ function Cart(props) {
                   -
                 </Button> */}
 
-                <RemoveIcon 
+                <RemoveIcon
                   className="Add_item"
                   id="add_cart_btn"
                   size="small"
                   color="primary"
                   onClick={() => handleQuantity("-", val)}
-                /> 
+                />
+
                 <Button
                   className="Add_item"
                   id="add_cart_btn"
                   size="small"
                   color="primary"
                   onClick={() => delItem(val)}
+                  variant="contained"
+                  color="secondary"
+                  className={classes.button}
+                  startIcon={<DeleteIcon />}
                 >
                   Delete Item
                 </Button>
-                </CardActions>
-              
+              </CardActions>
             </Card>
           );
         })}

@@ -9,7 +9,9 @@ let addToList = (state, action) => {
   });
   if (!item) {
     state.cartValue += 1;
-    state.cartList.push(action.value);
+    let value = action.value
+    value.quantity += 1;
+    state.cartList.push(value);
   }
   return state;
 };
