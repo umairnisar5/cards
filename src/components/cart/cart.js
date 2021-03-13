@@ -144,9 +144,9 @@ function Cart(props) {
         <h1 className="summary">Summary </h1>
         <h2>Total Items: 1</h2>
         <h2>Total Price $2</h2>
-        <Button id="button_chck" variant="contained" color="primary">
-          Primary
-        </Button>
+        <button className="button_chcek">
+          Chcek item
+        </button>
       </div>
     </div>
   );
