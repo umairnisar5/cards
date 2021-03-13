@@ -62,6 +62,20 @@
         "imgsrc":"https://i.pinimg.com/236x/5d/aa/70/5daa70fa26ed7c2e7edae033e79665d8.jpg",
         "desc": "Use power words that suit your tone like dazzling, spectacular,",
         "quantity": 0
+    },
+    {
+        "id": "10",
+        "name":"Zipper Shirt ",
+        "imgsrc":"https://i.pinimg.com/564x/ef/e4/7f/efe47fb32a84847fe5a35416ebdaf0a6.jpg",
+        "desc": "The biggest innovation in shirting since the sleeve ;-), the Zip Fit reinvents the slim fit button down shir",
+        "quantity": 0
+    },
+    {
+        "id": "11",
+        "name":"Jeans Cotton ",
+        "imgsrc":"https://i.pinimg.com/564x/0b/aa/24/0baa245985670aadef69abc3e4d61bf4.jpg",
+        "desc": "Denim is a sturdy cotton warp-faced textile in which the weft passes under two or more warp threads",
+        "quantity": 0
     }
     
 
