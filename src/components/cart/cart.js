@@ -142,10 +142,12 @@ function Cart(props) {
       </div>
       <div className="chcek_item">
         <h1 className="summary">Summary </h1>
-        <h2>Total Items: 1</h2>
-        <h2>Total Price $2</h2>
+        <div className="main_div" >
+        <h2>Total Items: {props.totalItems} </h2>
+        <h2>Total Price {`$${props.totalPrice}`} </h2>
+        </div>
         <button className="button_chcek">
-          Chcek item
+          Chcek out
         </button>
       </div>
     </div>
@@ -153,9 +155,20 @@ function Cart(props) {
 }
 
 const mapStateToProps = (state) => {
+  let totalItems  = 0;
+  let totalPrice = 0;
+  state.cartList.map((item) =>{
+totalItems += item.quantity;
+totalPrice += item.quantity  * item.price;
+  })
   return {
     cartList: state.cartList,
+    cartValue: state.cartValue,
+    totalItems: totalItems,
+    totalPrice: totalPrice
   };
 };
+
+
 
 export default connect(mapStateToProps)(Cart);
