@@ -6,8 +6,9 @@
 .App {
   text-align: center;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Libre+Baskerville:ital@1&display=swap');
 
 .cardscss {
   display: flex;
@@ -22,6 +23,32 @@
   text-shadow: 2px 2px 5px rgba(0, 238, 255, 0.884);
   text-align: center;
   font-size: 50px;
+}
+.detail {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.button_card {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.button_card:hover {
+  opacity: 0.7;
 }
 
 .nav_tag {
@@ -137,8 +164,8 @@
   align-items: center;
   float: center;
   transform: translate(600px, -37px);
-
 }
+
 @media screen and (max-width: 1200px) {
   .cardscss {
     flex-direction: column;

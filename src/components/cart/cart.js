@@ -9,8 +9,6 @@ import CardMedia from "@material-ui/core/CardMedia";
 import HomeIcon from "@material-ui/icons/Home";
 import Button from "@material-ui/core/Button";
 import history from "../../history";
-import LocalGroceryStoreIcon from "@material-ui/icons/LocalGroceryStore";
-import LocalMallIcon from "@material-ui/icons/LocalMall";
 import AddIcon from "@material-ui/icons/Add";
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -34,12 +32,21 @@ const useStyles = makeStyles({
   },
 });
 
+let clear =(value) => {
+  store.dispatch({
+    type: "CLEAR_CART",
+    value: value,
+  })
+}
+
 let delItem = (value) => {
   store.dispatch({
     type: "DEL_ITEM",
     value: value,
   });
 };
+
+
 
 let handleQuantity = (type, value) => {
   if (type === "+") {
@@ -58,12 +65,23 @@ let handleQuantity = (type, value) => {
 function Cart(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [itemDetail, setItemDetail] = useState({});
+  const [openDialog, setOpenDialog] = useState (false) ;
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleClickOpen = () => {
     setOpen(true);
   };
+
+  let clickOpen = (SelectedItem) => {
+    setOpenDialog(true) 
+    setItemDetail(SelectedItem)
+   }
+  
+  let clickClose = () => {
+    setOpenDialog(false)
+  }
 
   const handleClose = () => {
     setOpen(false);
@@ -86,14 +104,14 @@ function Cart(props) {
             setSearchTerm(event.target.value);
           }}
         />
-        <DeleteIcon className="delete_icon" color="white" onClick={delItem} />
+        <DeleteIcon className="delete_icon" color="white" onClick={clear} />
       </nav>
       <h1 className="item">Cart Item</h1>
       <div className="cardscss">
         {props.cartList.map((val, index) => {
           return (
             <Card className={classes.root}>
-              <CardActionArea>
+              <CardActionArea onClick={()=> clickOpen(val)}>
                 <CardMedia
                   className={classes.media}
                   image={val.imgsrc}
@@ -172,10 +190,10 @@ function Cart(props) {
             </div>
           </DialogContent>
           <DialogActions>
-          <Button onClick={handleClose} color="primary" id="cancel_dialog">
+          <Button onClick={handleClose} variant="outlined" color="primary" id="cancel_dialog">
               Cancel
             </Button>
-            <Button onClick={handleClose} color="primary" id="pay_dialog">
+            <Button onClick={handleClose} variant="outlined" color="primary" id="pay_dialog">
               Proceed To Pay
             </Button>
           </DialogActions>
@@ -183,7 +201,101 @@ function Cart(props) {
       </div>) : (
         <h1> </h1>
       )}
+
+      <div className="item_detail_div">
+        <Dialog
+          fullScreen={fullScreen}
+          open={openDialog}
+          onClose={clickClose}
+          aria-labelledby="responsive-dialog-title"
+        >
+          <h2
+            id="responsive-dialog-title"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              fontSize: "30px",
+              color: "rgb(26, 178, 255)",
+              fontFamily: "Anton, sans-serif",
+            }}
+          >
+            {itemDetail?.name}
+          </h2>
+          <DialogContent>
+            <div
+              className="img_div"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <img
+                src={itemDetail?.imgsrc}
+                alt="Dog Image"
+                width="250"
+                height="300"
+              />
+            </div>
+            <h2
+              id="responsive-dialog-title"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                fontSize: "25px",
+                color: "rgb(77, 77, 77)",
+                fontFamily: "'Akaya Telivigala', cursive",
+              }}
+            >
+              {`Price $${itemDetail?.price}`}
+            </h2>
+            <h2
+              id="responsive-dialog-title"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                fontSize: "25px",
+                color: "rgb(77, 77, 77)",
+                fontFamily: "'Akaya Telivigala', cursive",
+              }}
+            >
+              {`Size  ${itemDetail?.size}`}
+            </h2>
+            <h2
+              id="responsive-dialog-title"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                fontSize: "25px",
+                color: "rgb(77, 77, 77)",
+                fontFamily: "'Akaya Telivigala', cursive",
+              }}
+            >
+              {`Color  ${itemDetail?.Color}`}
+            </h2>
+            <DialogContentText
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                textAlign: "center",
+                fontSize: "25px",
+                color: "rgb(77, 77, 77)",
+                fontFamily: "'Anton', sans-serif",
+              }}
+            >
+              {itemDetail?.desc}
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button
+              autoFocus
+              id="close_dialog"
+              onClick={clickClose}
+              color="primary"
+            >
+              Close
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
     </div>
+    
   );
 }
 

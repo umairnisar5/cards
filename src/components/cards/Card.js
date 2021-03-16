@@ -44,7 +44,6 @@ function MediaCard(props) {
   };
 
   let clear = () => {
-    // setNewData(0);
     store.dispatch({
       type: "CLEAR_CART"
     })
@@ -70,7 +69,6 @@ function MediaCard(props) {
           className="addCartNumbers"
           color="secondary"
         >
-          {/* <DeleteIcon  className="delete_icon" color="white" onClick={clear} /> */}
 
           <LocalGroceryStoreIcon onClick={()=>{history.push("/cart")}} className="LocalGroceryStoreIcon" />
         </Badge>
@@ -98,18 +96,11 @@ function MediaCard(props) {
                   title="Contemplative Reptile"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant="h5" component="h3">
                     {val.name}
                   </Typography>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant="h5" component="h3">
                     { `Price $${val.price}`}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    {val.desc}
                   </Typography>
                 </CardContent>
               </CardActionArea>
